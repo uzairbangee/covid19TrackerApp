@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Suspense } from 'react';
 import './App.css';
+import Loading from './Components/Loading/Loading.component'
+const MapContainer = React.lazy(() => import('./Components/Map/MapContainer'));
+const Boxes = React.lazy(() => import('./Components/Boxes/Boxes.component'));
+const Charts = React.lazy(() => import('./Components/Charts/Charts.component'));
+const SelectBox = React.lazy(() => import('./Components/SelectBox/SelectBox'));
 
-function App() {
+
+
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      
+        <div id="main">
+          <Suspense fallback={<Loading/>}>
+            <SelectBox/>
+            <Boxes/>
+            <Charts/>
+            <MapContainer/>
+          </Suspense>
+        </div>
   );
 }
 
