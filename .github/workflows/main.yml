@@ -31,6 +31,9 @@ jobs:
     - name: Install Packages
       run: npm install
       
+    - name: google map install
+      run: npm install google-maps-react
+      
     - name: create build
       run: npm run build
     
