@@ -24,6 +24,11 @@ const Reducer = (state, action) => {
                 map : action.payload,
                 error: ""
             }
+        case "UPDATE_MODE":
+            return {
+                ...state,
+                mode : action.payload
+            }
         case "ERROR":
             return {
                 ...state,

@@ -4,6 +4,7 @@ import React, {createContext, useReducer} from 'react';
 const initialState = {
     loading: false,
     country : "",
+    mode : 'light',
     data: {
         confirmed: 0,
         recovered: 0,
@@ -24,6 +25,7 @@ const GlobalState = ({children}) => {
     return (
         <ActionContext.Provider value={{
             error : state.error,
+            mode : state.mode,
             map : state.map,
             loading : state.loading,
             data : state.data,

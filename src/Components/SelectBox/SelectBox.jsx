@@ -57,7 +57,7 @@ const SelectBox = () => {
             {
                 error && <p>{error}</p>
             }
-            <FormControl variant="outlined" className={classes.formControl}>
+            <FormControl variant="outlined" className={classes.formControl} style={{backgroundColor : "white"}}>
             <InputLabel htmlFor="age-native-simple"></InputLabel>
                 <Select
                 value={country}

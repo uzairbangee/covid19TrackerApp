@@ -20,7 +20,7 @@ const Boxes = () => {
         dispatch(await updateDataGlobal())
       })();
 
-    }, [])
+    }, []);
   
     return (
       <div className={classes.root}>
