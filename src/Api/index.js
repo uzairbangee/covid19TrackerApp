@@ -14,7 +14,10 @@ const updateData = async (country) => {
           })
     }
     catch (err){
-        console.log(err)
+        return ({
+            type: "ERROR",
+            payload : err
+          })
     }
 }
 
@@ -31,7 +34,10 @@ const updateMap = async (country) => {
           })
     }
     catch (err){
-        console.log(err)
+        return ({
+            type: "ERROR",
+            payload : err
+          })
     }
 }
 
@@ -49,7 +55,10 @@ const updateDataGlobal = async () => {
           })
     }
     catch (err){
-        console.log(err)
+        return ({
+            type: "ERROR",
+            payload : err
+          })
     }
 }
 

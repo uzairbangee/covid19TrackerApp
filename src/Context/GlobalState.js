@@ -9,6 +9,7 @@ const initialState = {
         recovered: 0,
         death: 0
     },
+    error : "",
     map : {
         lat : 37.10195849999999,
         lng : -97.0486521,
@@ -22,6 +23,7 @@ const GlobalState = ({children}) => {
 
     return (
         <ActionContext.Provider value={{
+            error : state.error,
             map : state.map,
             loading : state.loading,
             data : state.data,

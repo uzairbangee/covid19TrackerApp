@@ -3,22 +3,31 @@ const Reducer = (state, action) => {
         case "RESET_LOADING":
             return {
                 ...state,
-                loading: true
+                loading: true,
+                error: ""
             }
         case "UPDATE_DATA":
             return {
                 ...state,
-                data : action.payload
+                data : action.payload,
+                error: ""
             }
         case "UPDATE_COUNTRY":
             return {
                 ...state,
-                country : action.payload
+                country : action.payload,
+                error: ""
             }
         case "UPDATE_MAP":
             return {
                 ...state,
-                map : action.payload
+                map : action.payload,
+                error: ""
+            }
+        case "ERROR":
+            return {
+                ...state,
+                error : action.payload
             }
         default:
             return {

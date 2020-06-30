@@ -2,6 +2,7 @@ import React, {Fragment, useContext, useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
+// import { Alert } from '@material-ui/lab';
 import Select from '@material-ui/core/Select';
 import axios from 'axios';
 import {ActionContext} from '../../Context/GlobalState';
@@ -21,9 +22,8 @@ const SelectBox = () => {
     const classes = useStyles();
     const [country, setCountry] = useState("");
     const [countries, setCountries] = useState([]);
-    const [error, setError] = useState('');
 
-    const {dispatch, data} = useContext(ActionContext);
+    const {dispatch, error} = useContext(ActionContext);
 
     useEffect(() => {
         (async () => {
@@ -32,7 +32,10 @@ const SelectBox = () => {
                 setCountries(res.data.countries);
             }
             catch (err){
-                setError(err)
+                dispatch({
+                    type: "ERROR",
+                    payload : err
+                })
             }
         })();      
     }, [])
@@ -51,6 +54,9 @@ const SelectBox = () => {
 
     return (
         <Fragment>
+            {
+                error && <p>{error}</p>
+            }
             <FormControl variant="outlined" className={classes.formControl}>
             <InputLabel htmlFor="age-native-simple"></InputLabel>
                 <Select
