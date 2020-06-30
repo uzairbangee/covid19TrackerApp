@@ -35,7 +35,7 @@ jobs:
       run: npm install google-maps-react
       
     - name: create build
-      run: npm run build
+      run: CI=false npm run build
     
     - name: Installing Surge
       run: npm install -g surge
