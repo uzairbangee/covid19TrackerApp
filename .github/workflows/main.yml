@@ -35,7 +35,7 @@ jobs:
       run: npm install google-maps-react
       
     - name: create build
-      run: CI=false REACT_APP_GOOGLE_API=${{secrets.MAP_API_KEY}} npm run build
+      run: CI=false REACT_APP_GOOGLE_API=AIzaSyBjM7wHvs9daojQUeSMIh6ZvWxqnzjEpTo npm run build
     
     - name: Installing Surge
       run: npm install -g surge
